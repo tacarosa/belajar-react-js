@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bgHero from "../assets/img/bg hero.png";
 import ilustrasi from "../assets/img/ilustrasi.png";
@@ -6,10 +7,24 @@ import Input from "../components/input/Input";
 
 const LoginPage = () => {
     const navigate = useNavigate();
+    const [idPengguna, setIdpengguna] = useState("");
+    const [kataSandi, setKataSandi] = useState("");
+
+    const handleIdPenggunaChange = (e) => {
+        setIdpengguna(e.target.value);
+    };
+    const handleKataSandiChange = (e) => {
+        setKataSandi(e.target.value);
+    };
 
     const handleClick = () => {
-        console.log("Login button clicked");
-        navigate("/dashboard"); 
+        const payload = {
+            username : idPengguna,
+            password : kataSandi,
+        }
+        console.log(payload);
+        
+        navigate("/dashboard");
     };
 
     return (
@@ -40,12 +55,17 @@ const LoginPage = () => {
                     </h1>
                     <div className="mb-10">
                         <Input
+                            value={idPengguna}
                             label="ID Pengguna/Email"
                             placeholder="Masukkan ID Pengguna/Email Anda"
+                            onChange={handleIdPenggunaChange}
                         />
                         <Input
+                            value={kataSandi}
+                            type="password"
                             label="Kata Sandi"
                             placeholder="Masukkan Kata Sandi Anda"
+                            onChange={handleKataSandiChange}
                         />
                     </div>
                     <Button
