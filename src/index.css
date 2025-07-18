@@ -68,12 +68,17 @@
 
     h1 {
         font-size: theme("fontSize.2xl");
+        font-weight: 500;
     }
     h2 {
         font-size: theme("fontSize.xl");
     }
     h3 {
         font-size: theme("fontSize.lg");
+    }
+
+    button {
+        cursor: pointer;
     }
 
 }

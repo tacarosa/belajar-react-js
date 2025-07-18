@@ -35,20 +35,21 @@ const LoginPage = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
+                backgroundSize: "150%"
             }}
         >
-            <div className="w-9/12 min-h-[calc(100vh-100px)] h-100 flex">
+            <div className="w-9/12 min-h-[calc(100vh-100px)] h-100 flex ">
                 {/* Side Kiri */}
-                <div className="w-1/3 relative h-full flex items-center justify-center">
-                    <div className="absolute inset-0 bg-[#FFC8DD] opacity-50 rounded-l-4xl"></div>
+                <div className="w-2/5 relative h-full flex items-center justify-center max-md:hidden overflow-x-hidden">
+                    <div className="absolute inset-0 bg-[#FFC8DD] opacity-50 rounded-l-4xl "></div>
                     <img
                         src={ilustrasi}
                         alt="Background Hero"
-                        className="relative z-10"
+                        className="relative z-10 mr-10 scale-120"
                     />
                 </div>
                 {/* Side Kanan */}
-                <div className="w-2/3 h-full bg-white rounded-r-4xl pt-20 px-20">
+                <div className="w-3/5 h-full bg-white rounded-r-4xl pt-20 px-20 max-md:w-full max-md:rounded-4xl max-md:px-10">
                     <h1 className="font-bold mb-10">
                         Masuk{" "}
                         <span className="text-[#FF64A0]">VisData App</span>
